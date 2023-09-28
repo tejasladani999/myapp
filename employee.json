@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "department" : "Accounts",
+      "employeeName" : "Tejas Ladani",
+      "gender" : "Male",
+      "experience" : "2023",
+      "deptType" : "Government"
+    },
+    {
+      "department" : "Accounts",
+      "employeeName" : "Tejas Ladani",
+      "gender" : "Male",
+      "experience" : "2023",
+      "deptType" : "Private"
+    },
+    {
+      "department" : "Accounts",
+      "employeeName" : "Tejas Ladani",
+      "gender" : "Male",
+      "experience" : "2023",
+      "deptType" : "Government"
+    },
+    {
+      "department" : "Accounts",
+      "employeeName" : "Tejas Ladani",
+      "gender" : "Male",
+      "experience" : "2023",
+      "deptType" : "Government"
+    }
+
+  ]
+}
