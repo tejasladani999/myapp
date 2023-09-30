@@ -1,53 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Create from './components/EmployeeForm';
+import Edit from './components/Edit';
+import Delete from './components/Delete';
+
 
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // Replace 'data.json' with the path to your JSON file
-    axios.get('http://localhost:3200/posts')
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []); // The empty dependency array ensures this effect runs only once, similar to componentDidMount
-
   return (
-    <div  align="center" className='center-table'>
-      <h1>Employee Data</h1>
-      <table className='table table-hover' align='center' style={{width:"80%"}}>
-        <thead>
-          <tr>
-            <th>Department</th>
-            <th>Employee Name</th>
-            <th>Gender</th>
-            <th>Experience</th>
-            <th>DeptType</th>
-            <th colSpan={2}>Action  <button className='btn btn-outline-primary'>Add Employee</button></th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((employee, index) => (
-            <tr className={employee.deptType === 'Government' ? 'text-success' : 'text-danger'} key={index}>
-              <td>{employee.department}</td>
-              <td>{employee.employeeName}</td>
-              <td>{employee.gender}</td>
-              <td>{employee.experience}</td>
-              <td>{employee.deptType}</td>
-              <td>
-                {/* Add action buttons or links here */}
-                <button className='btn btn-outline-warning' style={{marginRight:"50px"}}>Edit</button>
-                <button className='btn btn-outline-danger'>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Router>
+      <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/EmployeeForm" element={<Create/>} />
+          {/* <Route exact path="/edit/:id" element={<Edit/>} /> */}
+          {/* <Route exact path="/delete/:id" element={<Delete/>} /> */}
+      </Routes>
+    </Router>
   );
 }
 

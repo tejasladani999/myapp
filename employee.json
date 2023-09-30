@@ -1,33 +1,64 @@
 {
   "posts": [
     {
-      "department" : "Accounts",
-      "employeeName" : "Tejas Ladani",
-      "gender" : "Male",
-      "experience" : "2023",
-      "deptType" : "Government"
+      "department": "Accounts",
+      "employeeName": "Tejas Ladani",
+      "gender": "Male",
+      "experience": "2023",
+      "deptType": "Government"
     },
     {
-      "department" : "Accounts",
-      "employeeName" : "Tejas Ladani",
-      "gender" : "Male",
-      "experience" : "2023",
-      "deptType" : "Private"
+      "department": "Accounts",
+      "employeeName": "Tejas Ladani",
+      "gender": "Male",
+      "experience": "2023",
+      "deptType": "Private"
     },
     {
-      "department" : "Accounts",
-      "employeeName" : "Tejas Ladani",
-      "gender" : "Male",
-      "experience" : "2023",
-      "deptType" : "Government"
+      "department": "Accounts",
+      "employeeName": "Tejas Ladani",
+      "gender": "Male",
+      "experience": "2023",
+      "deptType": "Government"
     },
     {
-      "department" : "Accounts",
-      "employeeName" : "Tejas Ladani",
-      "gender" : "Male",
-      "experience" : "2023",
-      "deptType" : "Government"
+      "department": "Accounts",
+      "employeeName": "Tejas Ladani",
+      "gender": "Male",
+      "experience": "2023",
+      "deptType": "Government"
+    },
+    {
+      "id": "20",
+      "department": "Sales",
+      "employeeName": "Assan",
+      "gender": "Male",
+      "experience": "01/01/2023",
+      "deptType": "Government"
+    },
+    {
+      "department": "Sales",
+      "employeeName": "Dhara",
+      "gender": "Female",
+      "experience": "2023-03-31",
+      "deptType": "Private",
+      "id": "O-tNWFG"
+    },
+    {
+      "department": "Purchase",
+      "employeeName": "Hardik",
+      "gender": "Male",
+      "experience": "2022-12-01",
+      "deptType": "Private",
+      "id": "iJ3adRP"
+    },
+    {
+      "department": "R&D",
+      "employeeName": "Ruchita Mehta",
+      "gender": "Female",
+      "experience": "2022-04-30",
+      "deptType": "Private",
+      "id": "v-IA4xb"
     }
-
   ]
 }
