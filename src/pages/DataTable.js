@@ -1,27 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link} from 'react-router-dom';
 import moment from "moment";
+import $ from 'jquery';
+import 'datatables.net';
+import 'datatables.net-dt/css/jquery.dataTables.min.css';
 
+const DataTable = ({data}) => {
 
-const Home = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:3200/posts')
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []); 
+    useEffect(() => {
+        // Initialize DataTables
+        const dataTable = $(document).ready(function () {
+          $('#Table').DataTable();
+        });  
+      }, [data]);
 
   return (
-    <div  align="center" className='center-table'>
-      <h1 style={{margin:20}}>Employee Management</h1>
-      <table id='Table' className='table table-striped table-bordered table-hover' align='center' style={{width:"80%"}}>
+    <table id='Table' align='center' style={{width:"80%"}}>
         <thead>
           <tr>
             <th>Department</th>
@@ -56,9 +50,8 @@ const Home = () => {
             </tr>
           ))}
         </tbody>
-      </table>
-    </div>
+    </table>
   )
 }
 
-export default Home
+export default DataTable

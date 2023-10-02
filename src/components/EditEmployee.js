@@ -1,18 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const EmployeeForm = () => {
+const EditEmployee = () => {
+  const { id } = useParams(); // Get the ID from the URL parameter
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     department: '',
     employeeName: '',
-    gender: 'Male', // Default value
+    gender: 'Male',
     experience: '',
-    deptType: 'Government', // Default value
+    deptType: 'Government',
   });
 
-  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  useEffect(() => {
+    // Fetch the existing employee data using the ID
+    axios
+      .get(`http://localhost:3200/posts/${id}`) // Replace with your API endpoint
+      .then((response) => {
+        const employeeData = response.data;
+        setFormData({
+          department: employeeData.department,
+          employeeName: employeeData.employeeName,
+          gender: employeeData.gender,
+          experience: employeeData.experience,
+          deptType: employeeData.deptType,
+        });
+      })
+      .catch((error) => {
+        setErrorMessage('Error fetching employee data.');
+      });
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,39 +46,22 @@ const EmployeeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add validation here if needed
-
-        // Generate a unique ID for each entry (You can use a library like 'uuid' for this)
-        const uniqueId = uuidv4();
-
-        // Create a new employee object with the unique ID
-        // const newEmployee = {id: uniqueId, ...formData };
-
-    // Send data to a JSON file (or API endpoint)
+    // Update the employee data
     axios
-      .post('http://localhost:3200/posts', formData) // Replace with your API endpoint or JSON file
+      .put(`http://localhost:3200/posts/${id}`, formData) // Replace with your API endpoint
       .then((response) => {
-        console.log(response.data)
-
-        alert("Employee Data sucessfully inserted!")
-        // Clear the form
-        setFormData({
-          department: '',
-          employeeName: '',
-          gender: 'Male',
-          experience: '',
-          deptType: 'Government',
-        });
+        setSuccessMessage('Data updated successfully.');
+        alert('Employee details successfully updated!')
         navigate("/");
       })
       .catch((error) => {
-        alert('Error saving data.');
+        alert('Error updating data.');
       });
   };
 
   return (
     <div className='container'>
-      <h2>Insert Employee Details</h2>
+      <h2>Edit Employee Details</h2>
       <form onSubmit={handleSubmit}>
         <div className='form-group' >
           <label htmlFor="department">Department:</label>
@@ -144,11 +149,11 @@ const EmployeeForm = () => {
           </select>
         </div>
         <div align='center'>
-          <button type="submit" className='btn btn-primary col-5'>Submit</button>
+          <button type="submit" className='btn btn-primary col-5'>Update</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default EmployeeForm;
+export default EditEmployee;

@@ -1,64 +1,60 @@
 {
   "posts": [
     {
-      "department": "Accounts",
-      "employeeName": "Tejas Ladani",
-      "gender": "Male",
-      "experience": "2023",
-      "deptType": "Government"
-    },
-    {
-      "department": "Accounts",
-      "employeeName": "Tejas Ladani",
-      "gender": "Male",
-      "experience": "2023",
-      "deptType": "Private"
-    },
-    {
-      "department": "Accounts",
-      "employeeName": "Tejas Ladani",
-      "gender": "Male",
-      "experience": "2023",
-      "deptType": "Government"
-    },
-    {
-      "department": "Accounts",
-      "employeeName": "Tejas Ladani",
-      "gender": "Male",
-      "experience": "2023",
-      "deptType": "Government"
-    },
-    {
-      "id": "20",
-      "department": "Sales",
+      "department": "Production",
       "employeeName": "Assan",
       "gender": "Male",
-      "experience": "01/01/2023",
-      "deptType": "Government"
-    },
-    {
-      "department": "Sales",
-      "employeeName": "Dhara",
-      "gender": "Female",
-      "experience": "2023-03-31",
-      "deptType": "Private",
-      "id": "O-tNWFG"
+      "experience": "2022-12-02",
+      "deptType": "Government",
+      "id": "20"
     },
     {
       "department": "Purchase",
       "employeeName": "Hardik",
       "gender": "Male",
-      "experience": "2022-12-01",
-      "deptType": "Private",
+      "experience": "2020-12-01",
+      "deptType": "Government",
       "id": "iJ3adRP"
     },
     {
       "department": "R&D",
-      "employeeName": "Ruchita Mehta",
+      "employeeName": "Roshani",
       "gender": "Female",
-      "experience": "2022-04-30",
+      "experience": "2021-01-01",
       "deptType": "Private",
-      "id": "v-IA4xb"
+      "id": "wlnT8up"
+    },
+    {
+      "department": "Purchase",
+      "employeeName": "Tejas",
+      "gender": "Male",
+      "experience": "2023-06-12",
+      "deptType": "Private",
+      "id": "p3TgceW"
+    },
+    {
+      "department": "Sales",
+      "employeeName": "Sunil",
+      "gender": "Male",
+      "experience": "2020-09-02",
+      "deptType": "Government",
+      "id": "xhEMZ-n"
+    },
+    {
+      "department": "WareHouse",
+      "employeeName": "Sunny Leon",
+      "gender": "Female",
+      "experience": "2021-11-30",
+      "deptType": "Private",
+      "id": "cQODd6d"
+    },
+    {
+      "department": "Sales",
+      "employeeName": "Tarun",
+      "gender": "Male",
+      "experience": "2022-01-04",
+      "deptType": "Private",
+      "id": "x2oegrT"
     }
   ]
 }
